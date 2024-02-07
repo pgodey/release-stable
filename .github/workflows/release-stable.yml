@@ -37,15 +37,15 @@ jobs:
           curl -L https://github.com/helm/chart-releaser/releases/download/v1.6.1/chart-releaser_1.6.1_linux_amd64.tar.gz --silent -O
           tar -xf chart-releaser_1.6.1_linux_amd64.tar.gz
           chmod +x cr
+          ls -ltra
           
           owner=$(cut -d '/' -f 1 <<< "$GITHUB_REPOSITORY")
           repo=$(cut -d '/' -f 2 <<< "$GITHUB_REPOSITORY")
 
-          args=(--owner "$owner" --repo "$repo")
+          args=(--owner "$owner" --git-repo "$repo")
           
-          args+=(--index-path ".cr-index/stable.yaml" --push)
+          #args+=(--index-path ".cr-index/stable.yaml")
           args+=(--pages-index-path "stable.yaml" --push)
 
           echo 'Updating charts repo index stable.yaml...'
           ./cr index "${args[@]}"          
-          #cr index --pages-index-path stable.yaml
