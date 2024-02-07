@@ -22,7 +22,7 @@ jobs:
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
       - name: Run chart-releaser
-        uses: helm/chart-releaser-action@vmain
+        uses: helm/chart-releaser-action@main
         with:
           skip_upload: true
         env:
@@ -32,6 +32,7 @@ jobs:
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         run: |
+          set -ex
           # Download chart-releaser
           curl -L https://github.com/helm/chart-releaser/releases/download/v1.6.1/chart-releaser_1.6.1_darwin_amd64.tar.gz --silent | tar -xz
           
@@ -44,5 +45,5 @@ jobs:
           args+=(--pages-index-path "stable.yaml" --push)
 
           echo 'Updating charts repo index stable.yaml...'
-          cr index "${args[@]}"          
+          ./cr index "${args[@]}"          
           #cr index --pages-index-path stable.yaml
