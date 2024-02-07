@@ -1,6 +1,0 @@
-dependencies:
-- name: igrcanalytics
-  repository: oci://igrcanalytics.azurecr.io/charts
-  version: 2.0.0
-digest: sha256:5ac08c43c1d52e20ff9ed3796e7b60b9c0b0fb1bdc7c89dfe30a99504cc32bd5
-generated: "2024-02-06T20:30:07.393207-08:00"
