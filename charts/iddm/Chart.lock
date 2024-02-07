@@ -1,0 +1,6 @@
+dependencies:
+- name: fid
+  repository: https://radiantlogic-devops.github.io/helm
+  version: 1.0.0
+digest: sha256:850b1bf28229f9393d960909096c38e51f45e21becd8d20e0276516cadb2d64c
+generated: "2024-02-06T20:28:12.216728-08:00"
