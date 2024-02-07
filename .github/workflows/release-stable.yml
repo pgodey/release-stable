@@ -34,8 +34,8 @@ jobs:
         run: |
           set -ex
           # Download chart-releaser
-          curl -L https://github.com/helm/chart-releaser/releases/download/v1.6.1/chart-releaser_1.6.1_darwin_amd64.tar.gz --silent -O
-          tar -xf chart-releaser_1.6.1_darwin_amd64.tar.gz
+          curl -L https://github.com/helm/chart-releaser/releases/download/v1.6.1/chart-releaser_1.6.1_linux_amd64.tar.gz --silent -O
+          tar -xf chart-releaser_1.6.1_linux_amd64.tar.gz
           chmod +x cr
           
           owner=$(cut -d '/' -f 1 <<< "$GITHUB_REPOSITORY")
