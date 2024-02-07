@@ -3,7 +3,7 @@ name: Release Charts
 on:
   push:
     branches:
-      - master
+      - stable
 
 jobs:
   release:
@@ -23,5 +23,21 @@ jobs:
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.6.0
+        with:
+          skip_upload: true
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Index stable.yaml
+        run: |
+          owner=$(cut -d '/' -f 1 <<< "$GITHUB_REPOSITORY")
+          repo=$(cut -d '/' -f 2 <<< "$GITHUB_REPOSITORY")
+
+          args=(--owner "$owner" --repo "$repo")
+          
+          args+=(--index-path ".cr-index/stable.yaml" --push)
+          args+=(--pages-index-path "stable.yaml" --push)
+
+          echo 'Updating charts repo index stable.yaml...'
+          cr index "${args[@]}"          
+          #cr index --pages-index-path stable.yaml
