@@ -19,6 +19,25 @@ entries:
   iddm:
   - apiVersion: v2
     appVersion: 8.0.2
+    created: "2024-02-08T00:42:04.082211314Z"
+    dependencies:
+    - name: fid
+      repository: https://radiantlogic-devops.github.io/helm
+      version: 1.0.0
+    description: A Helm chart for FID Kubernetes deployment
+    digest: acb68a30bbd5a665c19d4a7f0a55df793a6278d756f0fb8d6049cac0ead3877d
+    home: https://radiantlogic-devops.github.io/helm
+    maintainers:
+    - email: pgodey@radiantlogic.com
+      name: pgodey
+      url: https://www.radiantlogic.com
+    name: iddm
+    type: application
+    urls:
+    - https://github.com/pgodey/release-stable/releases/download/iddm-1.0.3/iddm-1.0.3.tgz
+    version: 1.0.3
+  - apiVersion: v2
+    appVersion: 8.0.2
     created: "2024-02-07T20:04:07.558136445Z"
     dependencies:
     - name: fid
@@ -74,4 +93,4 @@ entries:
     urls:
     - https://github.com/pgodey/release-stable/releases/download/iddm-1.0.0/iddm-1.0.0.tgz
     version: 1.0.0
-generated: "2024-02-07T20:04:07.55817621Z"
+generated: "2024-02-08T00:42:04.082248824Z"
