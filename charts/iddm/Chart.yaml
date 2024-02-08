@@ -17,6 +17,12 @@ type: application
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
 version: 1.0.2
 
+mappings:
+  - key1: value1
+    key2: value2
+  - key1: value3
+    key2: value4 
+
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning. They should reflect the version the application is using.
